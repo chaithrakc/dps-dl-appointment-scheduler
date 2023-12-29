@@ -6,5 +6,6 @@ def initialize_webdriver(headless=False):
     chrome_options = Options()
     if headless:
         chrome_options.add_argument('--headless')
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome('../chromedriver-win64/chromedriver.exe', options=chrome_options)
+    driver.maximize_window()
     return driver

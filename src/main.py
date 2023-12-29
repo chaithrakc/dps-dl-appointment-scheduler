@@ -14,7 +14,7 @@ def schedule_appointment():
 
     try:
         # page 1: filling out user information
-        user_info_page = UserInfoPage(driver, app_config['url'])
+        user_info_page = UserInfoPage(driver, app_config['dps_url'])
         user_info_page.fill_user_information(user_config)
 
         # page 2: providing email and zip code to find nearest DPS
