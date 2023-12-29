@@ -1,3 +1,5 @@
+import time
+
 from src.pages.date_selection_page import DateSelectionPage
 from src.pages.location_page import LocationPage
 from src.pages.user_info_page import UserInfoPage
@@ -19,13 +21,16 @@ def schedule_appointment():
 
         # page 2: providing email and zip code to find nearest DPS
         location_page = LocationPage(driver)
-        location_page.find_nearest_dps(user_config['email'], user_config['zip_code'])
+        location_page.find_nearest_dps(user_config['email'],
+                                       user_config['mobile_number'],
+                                       user_config['zip_code'])
 
         # page 3: selecting the date for the appointment
         date_selection_page = DateSelectionPage(driver)
         date_selection_page.select_appointment_date(user_config['desired_date'])
 
     finally:
+        time.sleep(3600)
         driver.quit()  # closing the web driver
 
 
