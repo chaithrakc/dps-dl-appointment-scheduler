@@ -1,0 +1,2 @@
+class UserInfoPage:
+    pass
