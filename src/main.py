@@ -27,10 +27,9 @@ def schedule_appointment():
 
         # page 3: selecting the date for the appointment
         date_selection_page = DateSelectionPage(driver)
-        date_selection_page.select_appointment_date(user_config['desired_date'])
+        date_selection_page.select_same_day_appointment()
 
     finally:
-        time.sleep(3600)
         driver.quit()  # closing the web driver
 
 
